@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="description" content="Giggle giggle, pictures of 256 big titties" />
+  <meta charset="utf-8">
+  <title>FloatingAbove</title>
+
+<!--    
+
+
+
+                    website made by River Marashi Andrew 
+                    all images made by 
+                    All Rights Reserved River Marashi Andrew 2022 ©
+                    @river.joon
+                    river.mka@gmail.com 
+
+
+-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="River Marashi Andrew">
+</head>
+
+<body onload="shuffleImages()">
+  
+<div class="container">
+  
+</div>
+
+<script src="images.jsonp"></script>
+
+<script>
+
+// The image index that we are going to show
+var currentIndex = 0;
+
+// Finds the width of the screen
+function getScreenWidth() {
+  return Math.max(
+    document.body.scrollWidth,
+    document.documentElement.scrollWidth,
+    document.body.offsetWidth,
+    document.documentElement.offsetWidth,
+    document.documentElement.clientWidth
+  );
+}
+
+// Finds the height of the screen
+function getScreenHeight() {
+  return Math.max(
+    document.body.scrollHeight,
+    document.documentElement.scrollHeight,
+    document.body.offsetHeight,
+    document.documentElement.offsetHeight,
+    document.documentElement.clientHeight
+  );
+}
+
+// Random number between 0 and max
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+images = 
+[ 
+    {"name":"AimeeVaseTattoo.jpeg",
+    "tip":"boobies"},
+    {"name":"BankStream002.jpeg", 
+    "tip":"fuck"},
+    {"name":"CliffsSanJuan001.jpeg", 
+    "tip":"spit in my mouth"},
+    {"name":"FieldWater001.jpeg", 
+    "tip":"ligmaKlit"},
+    {"name":"Gate001.jpeg", 
+    "tip":"T4T"},
+    {"name":"Gate002.jpeg", 
+    "tip":"T4T"},
+    {"name":"HillsSanJuan001.jpeg", 
+    "tip":"T4T"},
+    {"name":"Island001.jpeg", 
+    "tip":"T4T"},
+    {"name":"JoonSemaTattoo.jpeg", 
+    "tip":"T4T"},
+    {"name":"LeatherStillLife001.jpeg", 
+    "tip":"T4T"},
+    {"name":"LeatherStillLife002.jpeg", 
+    "tip":"T4T"},
+    {"name":"LeatherStillLife003.jpeg", 
+    "tip":"T4T"},
+    {"name":"LizCaitlyn003.jpeg", 
+    "tip":"T4T"},
+    {"name":"LoneTree003.jpeg", 
+    "tip":"T4T"},
+    {"name":"RoadSanJuan001.jpeg", 
+    "tip":"T4T"},
+    {"name":"SamSnakeWomanTattoo.jpeg", 
+    "tip":"T4T"},
+    {"name":"SelfTattoo1121_0010002.jpeg", 
+    "tip":"T4T"},
+    {"name":"SelfWood004-2.jpeg", 
+    "tip":"T4T"},
+    {"name":"Sema_TransTattoo004.jpeg", 
+    "tip":"T4T"},
+    {"name":"StillLifeWood.jpeg", 
+    "tip":"T4T"},
+    {"name":"TgirlAimeeTattoo.jpeg", 
+    "tip":"T4T"},
+    {"name":"ThroughTrees001.jpeg", 
+    "tip":"T4T"},
+    {"name":"TreeSanJuan001.jpeg", 
+    "tip":"T4T"},
+    {"name":"TreesCliff001.jpeg", 
+    "tip":"T4T"},
+    {"name":"TreesOutlook001.jpeg", 
+    "tip":"T4T"},
+    {"name":"XyaTattoos011.jpeg", 
+    "tip":"T4T"},
+    {"name":"XyaTattoos013.jpeg", 
+    "tip":"T4T"},
+    {"name":"YonicClif002.jpeg", 
+    "tip":"T4T"},
+    {"name":"SelfTattoo1121BW_001.jpeg", 
+    "tip":"T4T"},
+    {"name":"SelfTattoo1121BW_004.jpeg", 
+    "tip":"T4T"},
+    {"name":"SelfTattoo1121BW_005.jpeg", 
+    "tip":"T4T"},
+    {"name":"SelfTattoo1121BW_011.jpeg", 
+    "tip":"T4T"},
+    {"name":"Coyote.jpeg", 
+    "tip":"T4T"},
+    {"name":"", 
+    "tip":"T4T"},
+    {"name":"Coyote4.jpeg", 
+    "tip":"T4T"},
+    {"name":"CoyoteNov21_002-2.jpeg", 
+    "tip":"T4T"},
+    {"name":"CoyoteNov21_006.jpeg", 
+    "tip":"T4T"},
+    {"name":"Liz001-3.jpeg", 
+    "tip":"T4T"},
+    {"name":"SelfGlow2.jpeg", 
+    "tip":"T4T"},
+    {"name":"", 
+    "tip":"T4T"},
+
+    
+];
+
+
+
+/**
+ * the JSONP file is loaded and makes the 'images' variable
+ * this function shuffles those images by 'walking' the array
+ * and swapping the current item 'index' with a random one
+**/
+function shuffleImages() {
+	var numberOfImages = images.length;
+	for (let index = 0; index < numberOfImages; index++) {
+		var src = getRandomInt(numberOfImages);
+		var inFlight = images[index];
+		images[index] = images[src];
+		images[src] = inFlight;
+	}
+}
+
+	function randomImage() {
+		var imageIndex = getRandomInt(images.length);
+		return images[imageIndex];		
+	}
+
+	function showMeAnImage(sender) {
+		// You can only see images once
+		if( currentIndex >= images.length ) {
+			// if you wanted to be fancy, you could restart from the begining
+			return;
+		}
+		var image = images[currentIndex];
+		currentIndex ++;
+
+		console.log(image.name);
+		var img = document.createElement("img");
+		img.src = "AllImages/WEB/" + image.name;
+		img.style.position = "absolute";
+		img.style.left = ""+getRandomInt(getScreenWidth())+"px";
+		img.style.top = ""+getRandomInt(getScreenHeight())+"px";
+		var opacity = getRandomInt(60)/60;
+		img.style.opacity = 0.2 + opacity;
+
+		img.style.height = "40%";
+		img.style.width = "auto";
+
+		img.title = image.tip;
+		
+		var src = document.getElementById("imageDiv");
+		src.appendChild(img);
+	}
+</script>
+
+<div id="imageDiv" style="width: 100vw; height: 95vh; position: absolute;"/>
+
+<button onclick="showMeAnImage(this)" style="position: absolute; left: 50%; transform: translate(-50%,-150%); top:100%;">Click Me</button>
+
+
+</body>
+</html>
